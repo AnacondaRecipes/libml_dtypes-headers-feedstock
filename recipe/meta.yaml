@@ -8,9 +8,16 @@ package:
 source:
   url: https://github.com/jax-ml/ml_dtypes/archive/v{{ version }}.tar.gz
   sha256: 78332f6043df9e89f837a218cc127cf3d244a1cc3ae34dc6af916925be25e371
+  patches:
+    - patches/0001-Fix-relative-import.patch
 
 build:
   number: 0
+
+requirements:
+  build:
+    - patch     # [unix]
+    - m2-patch  # [win]
 
 test:
   commands:
