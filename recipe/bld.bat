@@ -1,13 +1,13 @@
 @echo on
 
-md %LIBRARY_PREFIX%\include\ml_dtypes\include
-if errorlevel 1 exit 1
+if not exist "%LIBRARY_PREFIX%\include\ml_dtypes\include\" mkdir "%LIBRARY_PREFIX%\include\ml_dtypes\include"
+if errorlevel 1 exit /b 1
 
-cp ml_dtypes\include\float8.h %LIBRARY_PREFIX%\include\ml_dtypes\include\float8.h
-if errorlevel 1 exit 1
+copy /Y ml_dtypes\include\float8.h "%LIBRARY_PREFIX%\include\ml_dtypes\include\float8.h"
+if errorlevel 1 exit /b 1
 
-cp ml_dtypes\include\mxfloat.h %LIBRARY_PREFIX%\include\ml_dtypes\include\mxfloat.h
-if errorlevel 1 exit 1
+copy /Y ml_dtypes\include\mxfloat.h "%LIBRARY_PREFIX%\include\ml_dtypes\include\mxfloat.h"
+if errorlevel 1 exit /b 1
 
-cp ml_dtypes\include\mxfloat.h %LIBRARY_PREFIX%\include\ml_dtypes\include\intn.h
-if errorlevel 1 exit 1
+copy /Y ml_dtypes\include\intn.h "%LIBRARY_PREFIX%\include\ml_dtypes\include\intn.h"
+if errorlevel 1 exit /b 1
